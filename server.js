@@ -8,12 +8,12 @@ app.use(bodyParser.json())
 
 // TODO: use mongoose
 const mongoose = require('mongoose')
-//mongoose.connect('mongodb://localhost/whiteboard',
-//                 {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb://127.0.0.1:27017/whiteboard',
+                 {useNewUrlParser: true, useUnifiedTopology: true});
 
-mongoose.connect(process.env.MONGODB_URL,
-                 {useNewUrlParser: true,
-                     useUnifiedTopology: true});
+//mongoose.connect(process.env.MONGODB_URL,
+//                 {useNewUrlParser: true,
+//                     useUnifiedTopology: true});
 
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
@@ -28,4 +28,4 @@ require('./controllers/quizzes.controller.server')(app)
 require('./controllers/questions.controller.server')(app)
 require('./controllers/quiz-attempts.controller.server')(app)
 
-app.listen(process.env.PORT || 8080);
+app.listen(8080);
