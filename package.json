@@ -1,5 +1,5 @@
 {
-  "name": "wbdv-f20-ngalinski-server-node",
+  "name": "wbdv-f20-ngalinski-server-a9",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,6 +9,7 @@
   "author": "ngalinski",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "mongoose": "^5.10.15"
   }

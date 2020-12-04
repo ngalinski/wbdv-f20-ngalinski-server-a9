@@ -4,7 +4,7 @@ const quizAttempts = mongoose.Schema({
                                          score: Number,
                                          quiz: {
                                              type: mongoose.Schema.Types.ObjectId,
-                                             ref: 'QuizzesModel'
+                                             ref: 'QuizAttemptModel'
                                          },
                                          answers: [questionSchema]
                                      }, {collection: 'quizAttempts'})

@@ -3,18 +3,17 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 // TODO: use mongoose
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/whiteboard',
-                 {useNewUrlParser: true, useUnifiedTopology: true});
+//mongoose.connect('mongodb://localhost/whiteboard',
+//                 {useNewUrlParser: true, useUnifiedTopology: true});
 
-//mongoose.connect("mongodb+srv://dbuser:JnKmUUDr7CLv9g8n@cluster0.xmdhr.mongodb.net/whiteboard?retryWrites=true&w=majority",
-//                 {useNewUrlParser: true,
-//                     useUnifiedTopology: true});
-
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
+mongoose.connect(process.env.MONGODB_URL,
+                 {useNewUrlParser: true,
+                     useUnifiedTopology: true});
 
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
