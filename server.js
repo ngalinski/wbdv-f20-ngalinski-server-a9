@@ -8,7 +8,7 @@ app.use(bodyParser.json())
 
 // TODO: use mongoose
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://127.0.0.1:27017/whiteboard',
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/whiteboard',
                  {useNewUrlParser: true, useUnifiedTopology: true});
 
 //mongoose.connect(process.env.MONGODB_URL,
@@ -28,4 +28,4 @@ require('./controllers/quizzes.controller.server')(app)
 require('./controllers/questions.controller.server')(app)
 require('./controllers/quiz-attempts.controller.server')(app)
 
-app.listen(8080);
+app.listen(process.env.PORT || 8080);
