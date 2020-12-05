@@ -1,11 +1,8 @@
-const mongoose = require('mongoose')
-const quizzesSchema = mongoose.Schema({
-                                          _id: String,
-                                          title: String,
-                                          questions: [{
-                                              type: mongoose.Schema.Types.ObjectId,
-                                              ref: 'QuestionsModel'
-                                          }]
-                                      }, {collection: 'quizzes'})
+const mongoose = require("mongoose");
 
-module.exports = quizzesSchema
+const quizzesSchemaServer = mongoose.Schema({
+        _id: String,
+        title: String,
+    }, {collection: "quizzes"})
+
+module.exports = quizzesSchemaServer;
