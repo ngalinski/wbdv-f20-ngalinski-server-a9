@@ -1,8 +1,8 @@
-const quizzesModel = require('../models/quizzes/quizzes.models.server')
+const quizzesModel = require('../models/quizzes/quizzes.models.server');
 
-const findAllQuizzes = () => quizzesModel.find()
+const findAllQuizzes = () => quizzesModel.find();
 
-const findQuizById = (quizId) =>
-    quizzesModel.findById(quizId)
+const findQuizById = (qid) =>
+    quizzesModel.findById(qid);
 
-module.exports = { findAllQuizzes, findQuizById}
+module.exports = { findAllQuizzes, findQuizById};
