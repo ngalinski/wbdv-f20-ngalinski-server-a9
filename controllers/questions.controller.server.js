@@ -1,7 +1,7 @@
 const questionService = require("../services/questions.service.server")
 
-module.exports = (app) => {
-    app.get("/api/quizzes/:qid/questions", (req, res) =>
+module.exports = function(app) {
+    app.get('/api/quizzes/:qid/questions', (req, res) =>
         questionService.findQuestionsForQuiz(req.params['qid'])
             .then(questions => res.json(questions)))
 
